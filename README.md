@@ -10,4 +10,4 @@
 ###While scrollview is scrolling, the size of each cell might be wrong. But I will fix this soon.
 ### Method -(void)setdata:(NSArray*)data haven't worked as my expectation, I will make this work really easy.
 ##Preview(Current)
-![Preview](Preview.gif)
+![Preview](export2.gif)
