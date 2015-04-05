@@ -60,7 +60,7 @@
 {
     ViewStack=[NSMutableArray array];
     CurrentIndex=0;
-    self.EmphasizeRate=0.95f;
+    self.EmphasizeRate=0.7f;
     self.NormalRate=0.2f;
     self.EnableCircle=YES;
     self.AutoCenter=NO;
@@ -82,10 +82,10 @@
         item.frame=CGRectMake(self.frame.size.width/2.f-ItemSize.width/2.f+count*ItemSize.width, (self.frame.size.height-ItemSize.height)/2.f, ItemSize.width, ItemSize.height);
         
         if (count==CurrentIndex) {
-            item.transform=CGAffineTransformScale(OriginalTransform, self.EmphasizeRate, self.EmphasizeRate);
+            item.MainView.transform=CGAffineTransformScale(OriginalTransform, self.EmphasizeRate, self.EmphasizeRate);
         }else
         {
-            item.transform=CGAffineTransformScale(OriginalTransform, self.NormalRate, self.NormalRate);
+            item.MainView.transform=CGAffineTransformScale(OriginalTransform, self.NormalRate, self.NormalRate);
         }
         
         item.imageview.layer.cornerRadius=ItemSize.width/2.f;
@@ -100,7 +100,7 @@
     {
         if (count!=CurrentIndex && count!=CurrentIndex+1) {
             VKControlWithImage *item = ViewStack[count];
-            item.transform=CGAffineTransformScale(OriginalTransform, self.NormalRate, self.NormalRate);
+            item.MainView.transform=CGAffineTransformScale(OriginalTransform, self.NormalRate, self.NormalRate);
         }
     }
 }
@@ -143,15 +143,15 @@
     }
     if (Selection-1>=0) {
         VKControlWithImage *pre=ViewStack[Selection-1];
-        pre.transform=CGAffineTransformScale(OriginalTransform, self.NormalRate, self.NormalRate);
+        pre.MainView.transform=CGAffineTransformScale(OriginalTransform, self.NormalRate, self.NormalRate);
     }
     
     if (Selection+1<ViewStack.count) {
         VKControlWithImage *itemBack=ViewStack[Selection+1];
-        itemBack.transform=CGAffineTransformScale(OriginalTransform, k1*insideOffset+self.NormalRate,k1*insideOffset+self.NormalRate);
+        itemBack.MainView.transform=CGAffineTransformScale(OriginalTransform, k1*insideOffset+self.NormalRate,k1*insideOffset+self.NormalRate);
     }
     VKControlWithImage *item=ViewStack[Selection];
-    item.transform=CGAffineTransformScale(OriginalTransform, k2*insideOffset+self.EmphasizeRate,k2*insideOffset+self.EmphasizeRate);
+    item.MainView.transform=CGAffineTransformScale(OriginalTransform, k2*insideOffset+self.EmphasizeRate,k2*insideOffset+self.EmphasizeRate);
     
 }
 
@@ -203,14 +203,12 @@
             [self addSubview:item];
         }
     }
-    
     NSInteger count2=0;
     for(VKControlWithImage *item in ViewStack)
     {
         [item setupTitleWithNo:count2];
         count2++;
     }
-    
     self.contentSize=CGSizeMake(ItemSize.width*data.count+self.frame.size.width-ItemSize.width, self.frame.size.height);
     [self reloadLayouts];
 }

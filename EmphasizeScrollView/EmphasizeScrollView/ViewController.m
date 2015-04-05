@@ -35,7 +35,7 @@
     scroll.OptionsCount=2;
     scroll.VKDelegate=self;
 //    scroll.delegate=self;
-    scroll.data=@[@"",@"",@"",@"",@"",@""];
+    scroll.data=@[@"",@"",@"",@"",@"",@"",@"",@"",@""];
     // Do any additional setup after loading the view, typically from a nib.
 }
 

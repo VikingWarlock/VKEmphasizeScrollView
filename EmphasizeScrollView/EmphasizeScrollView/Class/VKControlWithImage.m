@@ -11,6 +11,7 @@
 @interface VKControlWithImage()
 {
     UILabel *label;
+    UIView *tint;
 }
 @end
 
@@ -21,9 +22,14 @@
     self = [super init];
     if (self) {
         self.imageview=[[UIImageView alloc]init];
-        [self addSubview:self.imageview];
+        [self.MainView addSubview:self.imageview];
         self.imageview.layer.masksToBounds=YES;
         self.layer.masksToBounds=YES;
+        
+        tint=[[UIView alloc]init];
+        [self.MainView addSubview:tint];
+        tint.layer.masksToBounds=YES;
+        tint.backgroundColor=[UIColor yellowColor];
     }
     return self;
 }
@@ -32,10 +38,10 @@
 {
     if (!label) {
         label=[[UILabel alloc]init];
-        [self addSubview:label];
-        label.frame=CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+        [self.TipView addSubview:label];
+        label.frame=CGRectMake(0, 0, self.frame.size.width, 20.f);
         label.textAlignment=NSTextAlignmentCenter;
-        label.backgroundColor=[UIColor yellowColor];
+        label.backgroundColor=[UIColor clearColor];
         label.textColor=[UIColor blueColor];
         label.layer.masksToBounds=YES;
     }
@@ -46,14 +52,10 @@
 -(void)setFrame:(CGRect)frame
 {
     [super setFrame:frame];
-    if (label) {
-        label.frame=CGRectMake(0, 0, frame.size.width, frame.size.height);
-        label.layer.cornerRadius=frame.size.width/2.f;
-    
-    }
-    
     self.imageview.frame=CGRectMake(0, 0, frame.size.width, frame.size.height);
-
+    label.frame=CGRectMake(0, 0, self.frame.size.width, 20.f);
+    tint.frame=CGRectMake(0, 0, self.MainView.frame.size.width, self.MainView.frame.size.height);
+    tint.layer.cornerRadius=tint.frame.size.width/2.f;
 }
 
 

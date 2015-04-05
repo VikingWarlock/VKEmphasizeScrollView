@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VKControl.h"
 
-@interface VKControlWithView : UIControl
+@interface VKControlWithView : VKControl
 
 @end

@@ -17,6 +17,7 @@
 		881D5F691AD039DA00904C0E /* EmphasizeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 881D5F681AD039DA00904C0E /* EmphasizeScrollView.m */; };
 		881D5F6C1AD0594400904C0E /* VKControlWithImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 881D5F6B1AD0594400904C0E /* VKControlWithImage.m */; };
 		881D5F6F1AD0597C00904C0E /* VKControlWithView.m in Sources */ = {isa = PBXBuildFile; fileRef = 881D5F6E1AD0597C00904C0E /* VKControlWithView.m */; };
+		88E49B0D1AD1941D000A7B60 /* VKControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E49B0C1AD1941D000A7B60 /* VKControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		881D5F6B1AD0594400904C0E /* VKControlWithImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKControlWithImage.m; path = Class/VKControlWithImage.m; sourceTree = "<group>"; };
 		881D5F6D1AD0597C00904C0E /* VKControlWithView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKControlWithView.h; path = Class/VKControlWithView.h; sourceTree = "<group>"; };
 		881D5F6E1AD0597C00904C0E /* VKControlWithView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKControlWithView.m; path = Class/VKControlWithView.m; sourceTree = "<group>"; };
+		88E49B0B1AD1941D000A7B60 /* VKControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKControl.h; path = Class/VKControl.h; sourceTree = "<group>"; };
+		88E49B0C1AD1941D000A7B60 /* VKControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKControl.m; path = Class/VKControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,8 @@
 				881D5F6B1AD0594400904C0E /* VKControlWithImage.m */,
 				881D5F6D1AD0597C00904C0E /* VKControlWithView.h */,
 				881D5F6E1AD0597C00904C0E /* VKControlWithView.m */,
+				88E49B0B1AD1941D000A7B60 /* VKControl.h */,
+				88E49B0C1AD1941D000A7B60 /* VKControl.m */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				881D5F6C1AD0594400904C0E /* VKControlWithImage.m in Sources */,
+				88E49B0D1AD1941D000A7B60 /* VKControl.m in Sources */,
 				881D5F6F1AD0597C00904C0E /* VKControlWithView.m in Sources */,
 				881D5F691AD039DA00904C0E /* EmphasizeScrollView.m in Sources */,
 				881D5F481AD0396600904C0E /* ViewController.m in Sources */,

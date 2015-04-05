@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VKControl.h"
 
-@interface VKControlWithImage : UIControl
+@interface VKControlWithImage : VKControl
 
 @property(nonatomic,strong)UIImageView *imageview;
 
