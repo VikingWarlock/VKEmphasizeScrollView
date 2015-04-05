@@ -452,6 +452,7 @@
 				881D5F611AD0396600904C0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		881D5F621AD0396600904C0E /* Build configuration list for PBXNativeTarget "EmphasizeScrollViewTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +461,7 @@
 				881D5F641AD0396600904C0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -36,7 +36,6 @@
     scroll.VKDelegate=self;
 //    scroll.delegate=self;
     scroll.data=@[@"",@"",@"",@"",@"",@""];
-    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -49,5 +48,12 @@
 {
     data.text=[NSString stringWithFormat:@"Now Selected %d",index];
 }
+
+-(BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+
 
 @end

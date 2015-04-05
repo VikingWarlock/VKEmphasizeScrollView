@@ -94,12 +94,20 @@
     
 }
 
+-(void)setRestNormal
+{
+    for(NSInteger count=0;count<ViewStack.count;count++)
+    {
+        if (count!=CurrentIndex && count!=CurrentIndex+1) {
+            VKControlWithImage *item = ViewStack[count];
+            item.transform=CGAffineTransformScale(OriginalTransform, self.NormalRate, self.NormalRate);
+        }
+    }
+}
+
 #pragma Private Delegate Method
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-
-
-    
     CGPoint offset=scrollView.contentOffset;
     NSInteger Selection = (int)(offset.x/ItemSize.width);
 
@@ -129,17 +137,10 @@
                     [self.VKDelegate Emphasize:self DidEmphasizeTo:tempCurrent];
                 }
             }
-            
         }
         CurrentIndex=tempCurrent;
     
     }
-    
-
-    
-    
-//    NSLog(@"%f",insideOffset);
-    
     if (Selection-1>=0) {
         VKControlWithImage *pre=ViewStack[Selection-1];
         pre.transform=CGAffineTransformScale(OriginalTransform, self.NormalRate, self.NormalRate);
@@ -153,6 +154,7 @@
     item.transform=CGAffineTransformScale(OriginalTransform, k2*insideOffset+self.EmphasizeRate,k2*insideOffset+self.EmphasizeRate);
     
 }
+
 
 -(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
@@ -171,6 +173,10 @@
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     NSLog(@"stop3");
+    if (decelerate) {
+        [self setRestNormal];
+    }else
+    {
     NSInteger Selection = CurrentIndex;
     if (Selection>0) {
         [scrollView scrollRectToVisible:CGRectMake(Selection*ItemSize.width, (self.frame.size.height-ItemSize.height)/2.f, self.frame.size.width/2.f-ItemSize.width/2.f, ItemSize.height) animated:YES];
@@ -178,6 +184,7 @@
     }else
     {
         [scrollView scrollRectToVisible:CGRectMake(0, 0, self.frame.size.width/2.f, 10.f) animated:YES];
+    }
     }
 }
 
@@ -237,6 +244,8 @@
     ItemSize=GapLength > self.frame.size.height?CGSizeMake(self.frame.size.height, self.frame.size.height):CGSizeMake(GapLength, GapLength);
     [self reloadLayouts];
 }
+
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
